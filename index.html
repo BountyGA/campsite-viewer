@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campsite Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Campsite Layout</h1>
+
+  <model-viewer id="campsite-viewer"
+    src="model.glb"
+    camera-controls
+    touch-action="pan-y"
+    exposure="1"
+    auto-rotate
+    ar
+    shadow-intensity="1"
+    style="width: 100%; height: 600px;"
+  >
+    <!-- Example annotation for a building -->
+    <button class="hotspot" slot="hotspot-0" data-position="1 0.5 2" data-building="admin">🏢</button>
+  </model-viewer>
+
+  <!-- Modal for image carousel -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="carousel" class="carousel">
+        <!-- Images inserted dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
