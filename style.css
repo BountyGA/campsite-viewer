@@ -90,7 +90,7 @@ h1 {
 }
 
 .carousel-arrow {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   border: none;
   color: white;
   font-size: 36px;
@@ -102,8 +102,6 @@ h1 {
   z-index: 1001;
 }
 
-
 .carousel-arrow:hover {
   background: rgba(0, 0, 0, 0.8);
 }
-
