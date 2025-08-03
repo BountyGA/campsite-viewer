@@ -1,58 +1,65 @@
-document.querySelector('.hotspot').addEventListener('click', () => {
-  showModal();
-});
-
-function showModal() {
+document.addEventListener("DOMContentLoaded", () => {
+  const hotspot = document.querySelector(".hotspot");
   const modal = document.getElementById("modal");
   const carousel = document.getElementById("carousel");
-  carousel.innerHTML = "";
+  const closeBtn = document.querySelector(".close");
 
   const imageList = [
-    'Events hall output-1 (2).jpg',
-    'Output dinning hall.jpg',
-    'output Office suite.jpg',
-    'output-1 Security center.jpg',
-    'Admin block2.png'
+    "Events hall output-1 (2).jpg",
+    "Output dinning hall.jpg",
+    "output Office suite.jpg",
+    "output-1 Security center.jpg",
+    "Admin block2.png"
   ];
 
   let currentIndex = 0;
-  const images = [];
+  let images = [];
 
-  imageList.forEach((img, index) => {
-    const image = document.createElement("img");
-    image.src = `assets/building_images/${img}`;
-    image.classList.add(index === 0 ? "active" : "");
-    carousel.appendChild(image);
-    images.push(image);
+  hotspot.addEventListener("click", () => {
+    showModal();
   });
 
-  // Navigation buttons
-  const controls = document.createElement("div");
-  controls.className = "carousel-controls";
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
 
-  const prevBtn = document.createElement("button");
-  prevBtn.textContent = "⟨ Prev";
-  prevBtn.onclick = () => {
-    images[currentIndex].classList.remove("active");
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    images[currentIndex].classList.add("active");
-  };
+  function showModal() {
+    modal.style.display = "block";
+    carousel.innerHTML = "";
+    images = [];
 
-  const nextBtn = document.createElement("button");
-  nextBtn.textContent = "Next ⟩";
-  nextBtn.onclick = () => {
-    images[currentIndex].classList.remove("active");
-    currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].classList.add("active");
-  };
+    // Load images
+    imageList.forEach((imgSrc, index) => {
+      const img = document.createElement("img");
+      img.src = `assets/building_images/${imgSrc}`;
+      img.alt = `Image ${index + 1}`;
+      img.classList.add(index === 0 ? "active" : "");
+      carousel.appendChild(img);
+      images.push(img);
+    });
 
-  controls.appendChild(prevBtn);
-  controls.appendChild(nextBtn);
-  carousel.appendChild(controls);
+    // Add navigation buttons
+    const controls = document.createElement("div");
+    controls.className = "carousel-controls";
 
-  modal.style.display = "block";
-}
+    const prevBtn = document.createElement("button");
+    prevBtn.textContent = "⟨ Prev";
+    prevBtn.onclick = () => {
+      images[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      images[currentIndex].classList.add("active");
+    };
 
-document.querySelector(".close").addEventListener("click", () => {
-  document.getElementById("modal").style.display = "none";
+    const nextBtn = document.createElement("button");
+    nextBtn.textContent = "Next ⟩";
+    nextBtn.onclick = () => {
+      images[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add("active");
+    };
+
+    controls.appendChild(prevBtn);
+    controls.appendChild(nextBtn);
+    carousel.appendChild(controls);
+  }
 });
