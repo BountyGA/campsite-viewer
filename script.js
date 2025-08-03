@@ -8,10 +8,10 @@ function showModal() {
   carousel.innerHTML = "";
 
   // List all images you want to display
-  const imageList = [
-    'admin_1.jpg', 'admin_2.jpg',
-    'hostel_1.jpg', 'hostel_2.jpg',
-    'hall_1.jpg', 'hall_2.jpg',
+  const imageList = [ 'Events hall output-1 (2).jpg', 'Output dinning hall.jpg',
+                     'output Office suite.jpg', 'output-1 Security center.jpg',
+                     'Admin block2.png',
+   
     // Add more image file names here
   ];
 
