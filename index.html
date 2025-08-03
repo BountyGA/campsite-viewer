@@ -10,30 +10,29 @@
 <body>
 
   <h1>NRCS OYO Campsite Layout</h1>
-  <p>- Prepared at the discretion of Ojo Olaleye Branch Secretary NRCS Oyo State</p>
+  <p>- Prepared at the discretion of Ojo Olaleye, Branch Secretary NRCS Oyo State</p>
 
- <model-viewer id="campsite-viewer"
-  src="model.glb"
-  camera-controls
-  touch-action="pan-y"
-  exposure="1"
-  auto-rotate
-  ar
-  shadow-intensity="1"
-  style="width: 100%; height: 600px;"
->
-  <!-- One hotspot to trigger all images -->
-  <button class="hotspot" slot="hotspot-0" data-trigger="all">📸 View Design Photos</button>
-</model-viewer>
+  <model-viewer id="campsite-viewer"
+    src="model.glb"
+    camera-controls
+    touch-action="pan-y"
+    exposure="1"
+    auto-rotate
+    ar
+    shadow-intensity="1"
+    style="width: 100%; height: 600px;"
+  >
+    <button class="hotspot" slot="hotspot-0" data-trigger="all">📸 View Design Photos</button>
+  </model-viewer>
 
-<!-- Modal -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div id="carousel" class="carousel"></div>
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="carousel" class="carousel"></div>
+    </div>
   </div>
-</div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
