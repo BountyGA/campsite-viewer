@@ -1,24 +1,25 @@
-document.querySelectorAll('.hotspot').forEach(button => {
-  button.addEventListener('click', () => {
-    const building = button.dataset.building;
-    showModal(building);
-  });
+document.querySelector('.hotspot').addEventListener('click', () => {
+  showModal();
 });
 
-function showModal(buildingName) {
+function showModal() {
   const modal = document.getElementById("modal");
   const carousel = document.getElementById("carousel");
   carousel.innerHTML = "";
 
-  const images = {
-    admin: ['admin_1.jpg', 'admin_2.jpg'],
-    hostel: ['hostel_1.jpg', 'hostel_2.jpg'],
-    // add more building mappings
-  };
+  // List all images you want to display
+  const imageList = [
+    'admin_1.jpg', 'admin_2.jpg',
+    'hostel_1.jpg', 'hostel_2.jpg',
+    'hall_1.jpg', 'hall_2.jpg',
+    // Add more image file names here
+  ];
 
-  (images[buildingName] || []).forEach(img => {
+  imageList.forEach(img => {
     const image = document.createElement("img");
     image.src = `assets/building_images/${img}`;
+    image.style.width = "100%";
+    image.style.marginBottom = "10px";
     carousel.appendChild(image);
   });
 
