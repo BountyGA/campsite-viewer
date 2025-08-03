@@ -33,8 +33,32 @@ h1 {
   font-size: 24px;
   cursor: pointer;
 }
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
 .carousel img {
+  display: none;
   max-width: 100%;
-  margin: 10px auto;
+  height: auto;
+}
+
+.carousel img.active {
   display: block;
 }
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.carousel button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
