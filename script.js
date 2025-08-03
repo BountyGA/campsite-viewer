@@ -63,5 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   controls.appendChild(prevBtn);
   controls.appendChild(nextBtn);
   carousel.appendChild(controls);
+  console.log("Prev and Next buttons created");
+
 }
 });
